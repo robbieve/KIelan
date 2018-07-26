@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7">
+  <![endif]-->
+  <!--[if IE 7]>         
+  <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8">
+    <![endif]-->
+    <!--[if IE 8]>         
+    <html lang="en" ng-app="myApp" class="no-js lt-ie9">
+      <![endif]-->
+      <!--[if gt IE 8]><!--> 
+      <html lang="en" ng-app="myApp">
+        <!--<![endif]-->
+        <head>
+          <meta charset="utf-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <title>KielanLemons</title>
+          <meta name="description" content="">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link href="/components/normalize.css" rel="stylesheet" media="screen">
+          <link href="/components/foundation.css" rel="stylesheet" media="screen">
+          <link href="/build/font-awesome.css" rel="stylesheet">
+ 	  <link rel="stylesheet" type="text/css" href="/components/TagsInput/jquery.tagsinput.css">
+          <link href="/components/app.css" rel="stylesheet">
+	<link href="/components/Rebel.ico" rel="icon" type="image/x-icon" />
+	<script type="text/x-handlebars" class="index template">
+		{{#each this}}
+		<article class="postEntry">
+			<h3><a href="/post/{{value.url}}">{{value.title}}</a></h3>
+			<div class="sexy_line"></div>
+			<p>{{date_style value.date}}</p>
+			<p>content{{short_string value.content}}</p>
+      <a href="/post/{{value.url}}">[Read More...]</a>		
+		</article>
+		{{/each}}
+	</script>
+	<script type="text/x-handlebars" class="entry singlePost">
+	<article>
+		<h3>{{this.title}}</h3>
+		<div class="sexy_line"></div>
+		<p>{{this.date}}</p>
+		<p>content{{this.content}}</p>
+		<div div="styleTags">
+		{{tags_helper this.tags}}
+		</div>
+	</article>	
+	</script>
+        </head>
+        <body>
+          <!-- Top Bar -->
+          <nav class="top-bar large-9 columns" data-topbar role="navigation">
+            <ul class="title-area">
+              <li class="name">
+                <h1><a href="/">Kielan Lemons</a></h1>
+              </li>
+              <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+              <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+            </ul>
+            <section class="top-bar-section">
+              <ul class="right">
+                <li class="has-form">
+                  <div class="row collapse">
+                    <div class="large-9 small-9 columns">
+                      <input type="text" placeholder="Search...">
+                    </div>
+                    <div class="large-3 small-3 columns">
+                      <a href="#" class="alert button expand">Search</a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </section>
+          </nav>
+          <!-- End Top Bar -->
+          <!-- Content -->
+          <div class="row">
+          <div class="large-8 columns">
+          <div style="text-align: center;">
+            <h1>Most Recent</h1>
+          </div>
+          <!--[if lt IE 7]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+          <![endif]-->
+          <main></main>
+          <!-- In production use:
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+            -->
+          </div>
+          <!--sidebar-->
+          <div class="large-4 large-push-3 columns">
+            <a href="https://github.com/Kielan"><i class="fa fa-twitter-square fa-5x" aria-hidden="true"style="position:relative;padding:10px;"></i></a>
+            <a href="https://github.com/Kielan"><i class="fa fa-github-square fa-5x" aria-hidden="true"style="position:relative;padding:10px;"></i></a>
+            <a href="https://github.com/Kielan"><i class="fa fa-angellist fa-5x" aria-hidden="true"style="position:relative;padding:10px;"></i></a>
+          </div>
+          </div>
+          <!-- End Content -->
+	<script src="/templates/app.js"></script>
+	<script type="text/javascript" src="/app/components/TagsInput/jquery.tagsinput.js"></script>
+
+        </body>
+      </html>
+
